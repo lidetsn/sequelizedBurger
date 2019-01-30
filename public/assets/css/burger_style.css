@@ -1,0 +1,101 @@
+
+
+/* html, body { scroll-behavior:smooth; } */
+*{
+    box-sizing: border-box;
+}
+body {
+    /* background-size: cover; */
+     background: url(../img/background1.jpg) no-repeat center center fixed; 
+     /* background-color: black */
+     /* position: relative; */
+} 
+.container{
+    position: relative;
+    min-height: 100vh;
+}
+
+ /* #add{
+    background-color: brown;
+    background: url(../img/burger.gif)
+}  */
+.headimg{
+    height: 150px;
+    background: url(../img/burger.gif)
+  
+}
+
+
+
+#err{
+    color: red;
+    font-family: cursive;
+    font-style: italic;
+}
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;  
+  color: brown;
+  }
+h4,h2,h5,.bgname{
+    color: white;
+    font-family: cursive;
+}
+.bgname{
+    /* text-align: left; */
+    /* width: 100%; */
+    overflow: auto
+    
+}
+.divan {
+   
+    position: relative;
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 6s infinite;
+  }
+  
+@keyframes mymove {
+    from {left: 1%;}
+    to {left: 23%;}
+  }
+
+
+  
+
+  @media screen and (max-width:640px){/*any thing here works for <640*/
+    #head1,#head3{
+        display: none;
+    }
+.bgname{
+    overflow: hidden;
+}
+ .notdevoured{
+        font-size: 13px;
+    }
+    #notdevouredname{
+        font-size: 15px
+    }
+    #notdevouredrow{
+        border: 3px white;
+    }
+
+    .divan {
+   
+        position: relative;
+        -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+        animation: mymove 6s infinite;
+      }
+      
+    @keyframes mymove {
+        from {left: 1%;}
+        to {left: 2%;}
+      }
+     
+
+
+    }

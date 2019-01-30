@@ -1,0 +1,66 @@
+
+    
+
+<div class="container mt-1 ">  
+  <div id="content-wrap">
+         <div class="row my-3 "><div class="col-md-3 headimg border" id="head1"></div>
+            <div class="col-md-3 headimg border divan pt-3" id="head2" ><h2 class="text-center name pt-3">Eat-Da-Burger!</h2>
+        </div><div class="col-md-3" >
+        </div><div class="col-md-3 headimg border" id="head3"></div></div>
+  <div class="row mx-1"><div class="col-md-8 ">
+    <div class="row"><div class="col-md-12 ml-5"> <h5 id="notdevouredname">Burgers That are not Devoured!</h5>     
+      </div></div>
+        
+    
+  {{#each burgers}}
+    {{#unless devoured}}
+    	{{!-- <div class="row border"> --}}
+      <div class="row justify-content-end mr-1 border" id="notdevouredrow">
+
+  <div class=" col-sm-8   text-white  bgname pt-2  mr-5">{{burger_name}}</div>	
+  <div class=" col-xs-2  "><button class="change-devoured btn btn-outline-light my-1 mx-1 py-2 notdevoured" data-id="{{id}}" data-newdevoured="true">
+		Devoure!
+	 </button></div>	
+   <div class=" col-xs-2 "><button class="delete-burger btn btn-outline-danger  my-1 mx-1 py-2 notdevoured" data-id="{{this.id}}">Delete</button></div>	
+
+
+</div>
+{{!-- </div> --}}
+    {{/unless}}
+  {{/each}}
+
+   </div><div class="col-sm-4 border mt-2">
+     <div class="row"><div class="col-sm-12 text-center">
+     <h5>Devoured!</h5></div></div>
+<ol>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li class="pl-3">
+	<div class="row border">
+<div class="col-sm-12 text-white bgname">{{burger_name}}</div>	
+</div>
+</li>
+
+     {{/if}}
+     {{/each}}
+</ol></div></div>
+<div class="row  mt-3 mx-1"><div class="col-md-4"></div><div class="col-md-4 border" id="add"><div class="row"><div class="col-md-12"><h4 class="text-center">Add a Burger</h4></div></div>
+   <form class="create-form">
+  <div class="form-group "> 
+    <span id="err"></span><div class="row"><div class="col-md-12"><input type="text" id="ca" name="name" placeholder="Enter burger name here" class="form-control" />
+</div></div>
+    <div class="row text-center my-2"><div class="col-md-12 justify-content-center">  <button type="submit" class="btn btn-outline-light">Add Burger</button>
+</div></div>
+  </div>
+</form>
+</div><div class="col-md-4"></div></div>
+</div>
+<footer class="text-center ">        
+            <address> &copy;2019 Lidetu Neshnega seattle Wa</address>
+                     <a href="https://github.com/lidetsn/burger">Git Hub Repo</a>
+
+        </footer>
+</div>
+
+
+

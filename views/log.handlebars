@@ -1,0 +1,40 @@
+ <div class="container mt-1 ">
+     <div id="content-wrap">
+ <div class="container mt-5">
+     <div class="row"><div class="col-sm-4"><h6>Customer Name</h6></div><div class="col-sm-4"><h6>Burgers eaten</h6></div><div class=" col-sm-4"><h6>Eating now</h6></div></div>
+ {{#each dbCustomer}}
+       
+          <div class="row   border" id="logdiv">
+            <div class=" col-sm-3   pt-2  border">{{name}}</div>
+           
+             <div class="col-sm-4 border"> 
+                <ul>{{#each burgers}}
+                     {{#if devoured}}<li>
+                     {{burger_name}}<span class="text-right font-italic text-info"> (...eaten !)</span>
+                       </li>{{/if }}  
+                     {{/each}}
+                </ul>
+           </div>   
+                         <div class="col-sm-5  border"> 
+                <ul>{{#each burgers}}
+                     
+
+                       {{#unless devoured}}<li>
+                      {{burger_name}}<span class="text-right font-italic text-info"> (...on the table now)</span>
+                      </li> {{/unless}}
+                      
+                     {{/each}}
+                </ul>
+           </div>   
+                           
+         </div>       
+  {{/each}}
+
+   </div>  
+</div>
+   <footer class="text-center ">
+      <address> &copy;2019 Lidetu Neshnega seattle Wa</address>
+      <a href="https://github.com/lidetsn/sequelizedBurger">Git Hub Repo</a>
+
+    </footer>
+</div>

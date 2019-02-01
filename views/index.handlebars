@@ -1,66 +1,152 @@
-
-    
-
-<div class="container mt-1 ">  
+<div class="container mt-1 ">
   <div id="content-wrap">
-         <div class="row my-3 "><div class="col-md-3 headimg border" id="head1"></div>
-            <div class="col-md-3 headimg border divan pt-3" id="head2" ><h2 class="text-center name pt-3">Eat-Da-Burger!</h2>
-        </div><div class="col-md-3" >
-        </div><div class="col-md-3 headimg border" id="head3"></div></div>
-  <div class="row mx-1"><div class="col-md-8 ">
-    <div class="row"><div class="col-md-12 ml-5"> <h5 id="notdevouredname">Burgers That are not Devoured!</h5>     
-      </div></div>
-        
-    
-  {{#each burgers}}
-    {{#unless devoured}}
-    	{{!-- <div class="row border"> --}}
-      <div class="row justify-content-end mr-1 border" id="notdevouredrow">
-
-  <div class=" col-sm-8   text-white  bgname pt-2  mr-5">{{burger_name}}</div>	
-  <div class=" col-xs-2  "><button class="change-devoured btn btn-outline-light my-1 mx-1 py-2 notdevoured" data-id="{{id}}" data-newdevoured="true">
-		Devoure!
-	 </button></div>	
-   <div class=" col-xs-2 "><button class="delete-burger btn btn-outline-danger  my-1 mx-1 py-2 notdevoured" data-id="{{this.id}}">Delete</button></div>	
+    <div class="row my-3 ">
+      <div class="col-md-3 headimg border" id="head1"></div>
+      <div class="col-md-3 headimg border divan pt-3" id="head2">
+        <h2 class="text-center name pt-3">Eat-Da-Burger!</h2>
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-3 headimg border" id="head3"></div>
+    </div>
+    <div class="row mx-1">
+      <div class="col-md-8 ">
+        <div class="row">
+          <div class="col-md-12 ml-5">
+            <h5 id="notdevouredname">Burgers That are not Devoured!</h5>
+          </div>
+        </div>
 
 
-</div>
-{{!-- </div> --}}
-    {{/unless}}
-  {{/each}}
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{!-- <div class="row border"> --}}
+          <div class="row justify-content-end mr-1 border" id="notdevouredrow">
 
-   </div><div class="col-sm-4 border mt-2">
-     <div class="row"><div class="col-sm-12 text-center">
-     <h5>Devoured!</h5></div></div>
-<ol>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li class="pl-3">
-	<div class="row border">
-<div class="col-sm-12 text-white bgname">{{burger_name}}</div>	
-</div>
-</li>
+            <div class=" col-sm-8   text-white  bgname pt-2  mr-5">{{burger_name}}
+              <p id="{{id}}"></p>
+            </div>
+           
+            <div class=" col-xs-2  "><button class="change-devoured btn btn-outline-light my-1 mx-1 py-2 notdevoured"
+                data-id="{{id}}" data-newdevoured="true">
+                Devoure!
+              </button></div>
+            <div class=" col-xs-2 "><button class="delete-burger btn btn-outline-danger  my-1 mx-1 py-2 notdevoured"
+                data-id="{{this.id}}">Delete</button></div>
 
-     {{/if}}
-     {{/each}}
-</ol></div></div>
-<div class="row  mt-3 mx-1"><div class="col-md-4"></div><div class="col-md-4 border" id="add"><div class="row"><div class="col-md-12"><h4 class="text-center">Add a Burger</h4></div></div>
-   <form class="create-form">
-  <div class="form-group "> 
-    <span id="err"></span><div class="row"><div class="col-md-12"><input type="text" id="ca" name="name" placeholder="Enter burger name here" class="form-control" />
-</div></div>
-    <div class="row text-center my-2"><div class="col-md-12 justify-content-center">  <button type="submit" class="btn btn-outline-light">Add Burger</button>
-</div></div>
+
+          </div>
+          {{!-- </div> --}}
+        {{/unless}}
+        {{/each}}
+
+      </div>
+      <div class="col-sm-4 border mt-2">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h5>Devoured!</h5><a href="/api/customers">See Detail</a>
+          </div>
+        </div>
+        <ol>
+          {{#each burgers}}
+          {{#if devoured}}
+          <li class="pl-3">
+            <div class="row border">
+              <div class="col-sm-12 text-white bgname">{{burger_name}}</div>
+            </div>
+          </li>
+
+          {{/if}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+
+    <span class="text-info" id="test"></span>
+    <button class="btn btn-outline-light mt-1" id="showmenu">OPEN MENU</button>
+    <div class="row  mt-3 mx-1" id="menu">
+      {{!-- <div class="col-md-4"></div> --}}
+      <div class="col-md-4 border" id="add">
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="text-center">choose your order</h4>
+          </div>
+        </div>
+        <form class="create-form">
+          <div class="form-group ">
+
+            <div class="row listOfBurgers">
+              <div class="col-md-6 custom-control custom-checkbox">
+
+                <input type="checkbox" name="burger" value="Buffalo Burger" class="burgerType custom-control-input" id="custom1"> 
+                 <label class="custom-control-label" for="custom1">Buffalo Burger</label></div>
+              <div class="col-md-6"><img src="/assets/img/BUFALO.JPG" class="text-align-center"></div>
+            </div><br>
+            <div class="row listOfBurgers">
+              <div class="col-md-6 custom-control custom-checkbox">
+                <input type="checkbox" name="burger" value="Cheese Burger" class="burgerType custom-control-input" id="custom2"> 
+                <label class="custom-control-label" for="custom2">Cheese Burger</label></div>
+              <div class="col-md-6"><img src="/assets/img/cheeseburger.jpg"></div>
+            </div><br>
+
+            <div class="row listOfBurgers">
+              <div class="col-md-6 custom-control custom-checkbox">
+                <input type="checkbox" name="burger" value="Steamed Cheese Burger" class="burgerType custom-control-input" id="custom3">
+                 <label class="custom-control-label" for="custom3"> Steamed Cheese Burger</label>
+              </div>
+              <div class="col-md-6"><img src="/assets/img/Steamedcheeseburger.JPG"></div>
+            </div><br>
+            <div class="row listOfBurgers">
+              <div class="col-md-6 custom-control custom-checkbox">
+                <input type="checkbox" name="burger" value=" Steak Burger" class="burgerType custom-control-input" id="custom4"> 
+                 <label class="custom-control-label" for="custom4">Steak Burger</label></div>
+              <div class="col-md-6">
+                <img src="/assets/img/Steakburger.JPG"></div>
+            </div><br>
+            <div class="row listOfBurgers">
+              <div class="col-md-6 custom-control custom-checkbox">
+                <input type="checkbox" name="burger" value="Teriyaki Burger" class="burgerType custom-control-input" id="custom5"> 
+                <label class="custom-control-label" for="custom5">Teriyaki Burger</label></div>
+              <div class="col-md-6">
+                <img src="/assets/img/teriyakiburger.JPG"></div>
+            </div><br>
+            <div class="row listOfBurgers">
+              <div class="col-md-6 custom-control custom-checkbox">
+                <input type="checkbox" name="burger" value=" Kimchi Burger" class="burgerType custom-control-input" id="custom6">
+                 <label class="custom-control-label" for="custom6"> Kimchi Burger</label></div>
+              <div class="col-md-6">
+                <img src="/assets/img/kimchiburger.JPG"></div>
+            </div><br>
+            <div class="row listOfBurgers">
+
+              <span id="err"></span>
+              <div class="col-md-12"><input type="text" id="ca" name="name" placeholder="Enter your name here" class="form-control" />
+              </div>
+
+            </div><br>
+
+            <div class="row listOfBurgers">
+
+              <div class="col-md-12 justify-content-center"> <button type="submit" class="btn btn-outline-light" id="submit">Make
+                  order</button>
+              </div>
+
+            </div><br>
+
+
+          </div>
+
+        </form>
+      </div>
+
+      <div class="col-md-8"></div>
+    </div>
+
+ 
+
+    <footer class="text-center ">
+      <address> &copy;2019 Lidetu Neshnega seattle Wa</address>
+      <a href="https://github.com/lidetsn/sequelizedBurger">Git Hub Repo</a>
+
+    </footer>
   </div>
-</form>
-</div><div class="col-md-4"></div></div>
-</div>
-<footer class="text-center ">        
-            <address> &copy;2019 Lidetu Neshnega seattle Wa</address>
-                     <a href="https://github.com/lidetsn/burger">Git Hub Repo</a>
-
-        </footer>
-</div>
-
-
-

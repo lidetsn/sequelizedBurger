@@ -15,17 +15,21 @@ body {
     min-height: 100vh;
 }
 
- /* #add{
-    background-color: brown;
-    background: url(../img/burger.gif)
-}  */
+   /* #add{
+    background-color:		#817272;
+    background: url(../img/burg.jpg) 
+}    */
 .headimg{
     height: 150px;
     background: url(../img/burger.gif)
   
 }
-
-
+#menu{
+    display: none;
+}
+#logdiv{
+    background-color: beige;
+}
 
 #err{
     color: red;
@@ -42,8 +46,12 @@ footer {
   height: 2.5rem;  
   color: brown;
   }
-h4,h2,h5,.bgname{
+h2,.listOfBurgers{
     color: white;
+    font-family: cursive;
+}
+h4,h5,h6,.bgname{
+    color: whitesmoke;
     font-family: cursive;
 }
 .bgname{

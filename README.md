@@ -27,5 +27,7 @@ Technology used
   It follows the MVC design pattern; and  use Node and Sequelize queries and route data , and Handlebars to generate the HTML.
 
 i attached  the link to the video below that show how the app works 
+
 enjoy 
+
 author Lidetu s N

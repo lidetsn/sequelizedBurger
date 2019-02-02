@@ -76,7 +76,7 @@ h4,h5,h6,.bgname{
   
 
   @media screen and (max-width:640px){/*any thing here works for <640*/
-    #head1,#head3{
+    #head1,#head3,#logHead{
         display: none;
     }
 .bgname{

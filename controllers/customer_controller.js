@@ -11,23 +11,23 @@ module.exports = function(app) {
 app.get("/api/customers", function(req, res) {
   db.Customer.findAll({
     include: [db.burgers]
-  }).then(function(dbCustomer) {
+  }).then(function(data) {
     // res.json(dbCustomer);
-    res.render("log", {dbCustomer:dbCustomer});
+    res.render("log", {dbCustomer:data});
   });
   });
 
-  app.get("/api/customers/:id", function(req, res) {
-    // Find one customer with the id in req.params.id and return them to the user with res.json
-    db.Customer.findOne({
-      include: [db.burgers],
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbCust) {
-      res.json(dbCust);
-    });
-  });
+  // app.get("/api/customers/:id", function(req, res) {
+  //   // Find one customer with the id in req.params.id and return them to the user with res.json
+  //   db.Customer.findOne({
+  //     include: [db.burgers],
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbCust) {
+  //     res.json(dbCust);
+  //   });
+  // });
 
   app.post("/api/customers", function(req, res) {
     // Create customer with the data available to us in req.body
@@ -42,15 +42,15 @@ app.get("/api/customers", function(req, res) {
   });
 
 
-  app.delete("/api/customers/:id", function(req, res) {
-    // Delete the customer with the id available to us in req.params.id
-    db.Customer.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbCust) {
-      res.json(dbCust);
-    });
-  });
+  // app.delete("/api/customers/:id", function(req, res) {
+  //   // Delete the customer with the id available to us in req.params.id
+  //   db.Customer.destroy({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbCust) {
+  //     res.json(dbCust);
+  //   });
+  // });
 }
 

@@ -5,8 +5,8 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
   db.burgers.findAll({})
-      .then(function(burgers) {
-        res.render("index", {burgers:burgers});
+      .then(function(data) {
+        res.render("index",{burgers:data});
        
       }); 
 });
@@ -32,8 +32,8 @@ app.put("/api/burgers/:id", function(req, res) {
         id:  req.params.id
       }
     })
-    .then(function(burgers) {
-      res.render("index", {burgers:burgers});
+    .then(function(data) {
+      res.render("index", {burgers:data});
     });
 });
 

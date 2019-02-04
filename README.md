@@ -37,6 +37,9 @@
   It follows the MVC design pattern; and  use Node and Sequelize queries and route data , and Handlebars to generate the HTML.
 
 i attached  the link to the video below that show how the app works 
+
+Heroku Link:  https://safe-cove-34799.herokuapp.com
+
  video:  https://drive.google.com/file/d/18cgTXsdB2zj94-7BDCopaB8t1_3_0-jW/view
 enjoy 
 author Lidetu s N

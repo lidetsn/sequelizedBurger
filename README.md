@@ -25,7 +25,7 @@
  * bootstrap
  
  ## installation guide
-    to run the app locally
+      To run the app at localhost follow these steps
    * you will need to have mysql, Node.js and NPM installed locally,
      or you will need access to an environment that already has them installed. 
      you will also be using the Command Prompt (Windows)  Terminal (Mac) to install the required packages,
@@ -41,6 +41,7 @@ i attached  the link to the video below that show how the app works
 Heroku Link:  https://safe-cove-34799.herokuapp.com
 
  video:  https://drive.google.com/file/d/18cgTXsdB2zj94-7BDCopaB8t1_3_0-jW/view
+ 
 enjoy 
 
 author Lidetu s N

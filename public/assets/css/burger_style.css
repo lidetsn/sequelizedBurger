@@ -57,7 +57,8 @@ h4,h5,h6,.bgname{
 .bgname{
     /* text-align: left; */
     /* width: 100%; */
-    overflow: auto
+    overflow: auto;
+    
     
 }
 .divan {

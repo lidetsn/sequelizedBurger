@@ -9,64 +9,13 @@
       </div>
       <div class="col-md-3 headimg border" id="head3"></div>
     </div>
-    <div class="row mx-1">
-      <div class="col-md-8 ">
-        <div class="row">
-          <div class="col-md-12 ml-5">
-            <h5 id="notdevouredname">Burgers not Devoured!</h5>
-          </div>
-        </div>
-
-
-        {{#each burgers}}
-        {{#unless devoured}}
-        {{!-- <div class="row border"> --}}
-          <div class="row justify-content-end mr-1 border" id="notdevouredrow">
-
-            <div class=" col-sm-8   text-white  bgname pt-2  mr-5">{{burger_name}}
-              <p id="{{id}}"></p>
-            </div>
-           
-            <div class=" col-xs-2  "><button class="change-devoured btn btn-outline-light my-1 mx-1 py-2 notdevoured"
-                data-id="{{id}}" data-newdevoured="true">
-                Devoure!
-              </button></div>
-            <div class=" col-xs-2 "><button class="delete-burger btn btn-outline-danger  my-1 mx-1 py-2 notdevoured"
-                data-id="{{this.id}}">Delete</button></div>
-
-
-          </div>
-          {{!-- </div> --}}
-        {{/unless}}
-        {{/each}}
-
-      </div>
-      <div class="col-sm-4 border mt-2">
-        <div class="row">
-          <div class="col-sm-12 text-center">
-            <h5>Devoured!</h5><a href="/api/customers">See Detail</a>
-          </div>
-        </div>
-        <ol>
-          {{#each burgers}}
-          {{#if devoured}}
-          <li class="pl-3">
-            <div class="row border">
-              <div class="col-sm-12 text-white bgname">{{burger_name}}</div>
-            </div>
-          </li>
-
-          {{/if}}
-          {{/each}}
-        </ol>
-      </div>
-    </div>
-
-    <span class="text-info" id="test"></span>
-    <button class="btn btn-outline-light mt-1" id="showmenu">OPEN MENU</button>
-    <div class="row  mt-3 mx-1" id="menu">
+    
+    <div class="row ">
+      <span class="text-info" id="test"></span>
+    {{!-- <button class="btn btn-outline-light mt-1" id="showmenu">OPEN MENU</button> --}}
+    {{!-- <div class="row  mt-3 mx-1" id="menu"> --}}
       {{!-- <div class="col-md-4"></div> --}}
-      <div class="col-md-4 border" id="add">
+      <div class="col-md-4 border mr-md-5" id="add">
         <div class="row">
           <div class="col-md-12">
             <h4 class="text-center">choose your order</h4>
@@ -138,12 +87,58 @@
 
         </form>
       </div>
+      <div class="col-md-4 md-mr-2 mt-3">
+        <div class="row">
+          <div class="col-md-12  text-center border">
+            <h5 id="notdevouredname">Burgers not Devoured!</h5>
+          </div>
+        </div>
 
-      <div class="col-md-8"></div>
+{{!-- 2 step from here --}}
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{!-- <div class="row border"> --}}
+          <div class="row justify-content-end  border" id="notdevouredrow">
+
+            <div class=" col-sm-6   text-white  bgname pt-2 ">{{burger_name}}
+              <p id="{{id}}"></p>
+            </div>
+           
+            <div class=" col-xs-3  "><button class="change-devoured btn btn-outline-light my-1 mx-1 py-2 notdevoured"
+                data-id="{{id}}" data-newdevoured="true">
+                Devoure!
+              </button></div>
+            <div class=" col-xs-3 "><button class="delete-burger btn btn-outline-danger  my-1 mx-1 py-2 notdevoured"
+                data-id="{{this.id}}">Delete</button></div>
+
+
+          </div>
+          {{!-- </div> --}}
+        {{/unless}}
+        {{/each}}
+
+      </div>
+      <div class="col-sm-3  mt-2">
+        <div class="row">
+          <div class="col-sm-12 text-center border ml-md-3">
+            <h5>Devoured!</h5><a href="/api/customers">See Detail</a>
+          </div>
+        </div>
+        <ol>
+          {{#each burgers}}
+          {{#if devoured}}
+          <li class="pl-3">
+            <div class="row border">
+              <div class="col-sm-12 text-white bgname">{{burger_name}}</div>
+            </div>
+          </li>
+
+          {{/if}}
+          {{/each}}
+        </ol>
+      </div>
+    
     </div>
-
- 
-
     <footer class="text-center ">
       <address> &copy;2019 Lidetu Neshnega seattle Wa</address>
       <a href="https://github.com/lidetsn/sequelizedBurger">Git Hub Repo</a>

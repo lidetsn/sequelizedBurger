@@ -40,7 +40,7 @@ i attached  the link to the video below that show how the app works
 
 Heroku Link:  https://safe-cove-34799.herokuapp.com
 
- video:  https://drive.google.com/file/d/18cgTXsdB2zj94-7BDCopaB8t1_3_0-jW/view
+ video:  https://drive.google.com/file/d/1B6vWnlqaHY-97-c6ZB8kirusLuRO4WNT/view
 enjoy 
 
 author Lidetu s N
